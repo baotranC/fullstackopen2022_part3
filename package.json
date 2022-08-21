@@ -1,0 +1,27 @@
+{
+  "name": "phonebookbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baotranC/fullstackopen2022_part3.git"
+  },
+  "author": "baotranC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baotranC/fullstackopen2022_part3/issues"
+  },
+  "homepage": "https://github.com/baotranC/fullstackopen2022_part3#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
