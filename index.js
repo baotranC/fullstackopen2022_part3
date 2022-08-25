@@ -1,4 +1,3 @@
-// const { request, response } = require('express')
 const express = require('express')
 var morgan = require('morgan')
 const cors = require('cors')
