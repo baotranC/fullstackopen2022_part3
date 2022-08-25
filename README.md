@@ -1,4 +1,4 @@
-# Part 2: Communicating with server, phonebook
+# Part 3: Programming a server with NodeJS and Express
 
 ## phonebook
 
