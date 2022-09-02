@@ -14,7 +14,7 @@ The frontend production build is added in the backend to deploy the whole applic
 https://guarded-wave-38882.herokuapp.com/
 https://guarded-wave-38882.herokuapp.com/api/persons
 
-![](phonebook1.JPG)
+![](phonebook_b1.JPG)
 
 ## This project contains two sections:
 ### BE
