@@ -26,15 +26,16 @@ app.get('/api/persons', (request, response) => {
   })
 })
 
-//TODO:
 app.get('/info', (request, response) => {
-  const currentDate = new Date()
+  Person.find({}).then(persons => {
+    const currentDate = new Date()
 
-  response.send(
-    `<div>
-      <div>Phonebook has info for ${persons.length} people</div>
-      <div>${currentDate}</div>
-    </div>`)
+    response.send(
+      `<div>
+        <div>Phonebook has info for ${persons.length} people</div>
+        <div>${currentDate}</div>
+      </div>`)
+  })
 })
 
 app.get('/api/persons/:id', (request, response) => {
