@@ -67,17 +67,15 @@ const generateId = () => {
 
 app.post('/api/persons', (request, response, next) => {
   const body = request.body
-
-  // This is another way to validate
-  // if (!body.name) {
-  //   return response.status(400).json({
-  //     error: 'name missing'
-  //   })
-  // } else if (!body.number) {
-  //   return response.status(400).json({
-  //     error: 'number missing'
-  //   })
-  // }
+  if (!body.name) {
+    return response.status(400).json({
+      error: 'name missing'
+    })
+  } else if (!body.number) {
+    return response.status(400).json({
+      error: 'number missing'
+    })
+  }
 
   const person = new Person({
     id: generateId(),
