@@ -77,6 +77,12 @@ app.post('/api/persons', (request, response, next) => {
     })
   }
 
+  if(Person.find({ name: body.name })){
+    return response.status(400).json({
+      error: 'name is already in the phonebook'
+    })
+  }
+
   const person = new Person({
     id: generateId(),
     name: body.name,
