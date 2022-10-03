@@ -2,7 +2,7 @@
 
 ## phonebook
 
-This application allows you to manage a phonebook: addition, modification, deletion and filter of a contact.
+This application allows you to manage a phonebook: addition, modification, deletion and filter of a contact. Field validation is also done.
 
 This application is deployed using Heroku, a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. 
 
@@ -35,13 +35,6 @@ These are the possible requests:
     }
 - Fetch all persons info/resources: GET http://localhost:3001/info
 
-## Others
-### Tools to test API
-These tools allow to test HTTP requests
-
-#### - Postman 
-#### - Visual Studio Code REST client plugin 
-
 ## Run 
 - `npm start`
 Runs the node server<br />
@@ -64,3 +57,21 @@ Combines these two and contains the necessary git commands to update the backend
 
 - `npm run logs:prod`
 Show the Heroku logs.
+
+## Others
+### Tools to test API
+These tools allow to test HTTP requests
+
+#### - Postman 
+#### - Visual Studio Code REST client plugin 
+
+### Command-line database
+There is a mongo.js file in the project directory that can be used for adding entries to the phonebook, and for listing all of the existing entries in the phonebook.
+
+![](phonebook_c1.JPG)
+
+![](phonebook_c2.JPG)
+
+![](phonebook_c3.JPG)
+
+Instead of passing the password in the command line each time, add the environment variables in Heroku dashboard.
