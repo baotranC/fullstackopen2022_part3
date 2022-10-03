@@ -77,22 +77,24 @@ app.post('/api/persons', (request, response, next) => {
     })
   }
 
-  if(Person.find({ name: body.name })){
-    return response.status(400).json({
-      error: 'name is already in the phonebook'
+  Person.find({ name: body.name }).then(result => {
+    if (result.length) {
+      return response.status(400).json({
+        error: 'name is already in the phonebook'
+      })
+    }
+
+    const person = new Person({
+      id: generateId(),
+      name: body.name,
+      number: body.number
     })
-  }
 
-  const person = new Person({
-    id: generateId(),
-    name: body.name,
-    number: body.number
+    person.save().then(savedPerson => {
+      response.json(savedPerson)
+    })
+      .catch(error => next(error))
   })
-
-  person.save().then(savedPerson => {
-    response.json(savedPerson)
-  })
-    .catch(error => next(error))
 })
 
 app.put('/api/persons/:id', (request, response, next) => {
