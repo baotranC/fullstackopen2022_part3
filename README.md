@@ -2,7 +2,9 @@
 
 ## phonebook
 
-This application allows you to manage a phonebook: addition, modification, deletion and filter of a contact. Field validation is also done.
+This application allows you to manage a phonebook: addition, modification, deletion and filter of a contact. 
+
+It also includes field validation and ESLint to find and fix problems with the JavaScript code.
 
 This application is deployed using Heroku, a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. 
 
