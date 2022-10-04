@@ -12,12 +12,12 @@ app.use(express.static('build'))
 app.use(cors())
 
 // Format logs
-morgan.token('body', (req, res) => {
-  if (req.method === "POST") {
+morgan.token('body', (req) => {
+  if (req.method === 'POST') {
     return JSON.stringify(req.body)
   }
-});
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
+})
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 /// APIs: HTTP METHODS
 app.get('/api/persons', (request, response) => {
@@ -55,14 +55,14 @@ app.get('/api/persons/:id', (request, response) => {
 
 app.delete('/api/persons/:id', (request, response, next) => {
   Person.findByIdAndRemove(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
     .catch(error => next(error))
 })
 
 const generateId = () => {
-  return Math.floor(Math.random() * 10000);
+  return Math.floor(Math.random() * 10000)
 }
 
 app.post('/api/persons', (request, response, next) => {
@@ -112,14 +112,14 @@ app.put('/api/persons/:id', (request, response, next) => {
 })
 
 /// OTHER MIDDLEWARES
-/* Middleware that is used for catching requests 
+/* Middleware that is used for catching requests
    made to non-existent routes */
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: 'unknown endpoint' })
 }
 app.use(unknownEndpoint)
 
-/* Middleware that handles the errors 
+/* Middleware that handles the errors
   => this has to be the last loaded middleware */
 const errorHandler = (error, request, response, next) => {
   console.error(error.message)
